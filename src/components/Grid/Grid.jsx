@@ -6,7 +6,7 @@ import isWinner from '../../helpers/checkWinnner';
 function Grid({numberOfCards}) {
     const [board, setBoard] = useState(Array(numberOfCards).fill(""));
     const [turn, setTurn] = useState(true); // ture => O , false => X
-    const [winner, steWinner] = useState(null);
+    const [winner, setWinner] = useState(null);
 
     function play(index) {
         if(turn == true) {
@@ -25,7 +25,7 @@ function Grid({numberOfCards}) {
     }
     function reset() {
         setTurn(true);
-        steWinner(null);
+        setWinner(null);
         setBoard(Array(numberOfCards).fill(""));
     }
     return (
